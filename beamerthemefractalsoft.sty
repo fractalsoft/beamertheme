@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%
+% Fractal Soft %
+%%%%%%%%%%%%%%%%
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+
+\DeclareOptionBeamer{shadow}[true]{\def\beamer@themerounded@shadow{#1}}
+\ExecuteOptionsBeamer{shadow=false}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\useoutertheme{shadow}
+
+\definecolor{couleurbarrehaut}{HTML}{C0BEBF}
+\definecolor{couleurbarrebas}{RGB}{190,190,190}
+
+\AtBeginDocument{
+  \pgfdeclareverticalshading{beamer@belowframetitle}{\the\paperwidth}{%
+    color(0pt)=(bg);
+    color(4pt)=(black!50!bg)
+  }
+}
+
+\addtobeamertemplate{headline}
+{}
+{
+  \@tempdimb=2.75ex%
+  \ifnum\beamer@subsectionmax<\beamer@sectionmax%
+    \multiply\@tempdimb by\beamer@sectionmax%
+  \else%
+    \multiply\@tempdimb by\beamer@subsectionmax%
+  \fi%
+  \vskip-1\@tempdimb
+  \includegraphics[width=1.2cm]{images/fractalsoft-logotype.png}
+}
+
+\defbeamertemplate*{block begin}{fractalsoft theme}
+{
+  \begin{beamerboxesrounded}[upper=block title color,lower=block background,shadow=true]
+    {\insertblocktitle}
+}
+
+\defbeamertemplate*{block end}{Warsaw}
+{
+  \end{beamerboxesrounded}
+
+}
+
+\defbeamertemplate*{frametitle}{fractalsoft theme}
+{
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{frametitle}
+    \usebeamerfont*{frametitle}
+    \vspace{10pt}
+    \insertframetitle
+  \end{beamercolorbox}%
+  \vskip-21pt
+  \insertvrule{1pt}{black}
+  \nointerlineskip
+}
+
+%% Footline
+\defbeamertemplate*{footline}{fractalsoft theme}
+{
+  \vbox{%
+    \hspace{-0.5mm}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.75ex,dp=1ex,right]{author in head/foot}%
+      \usebeamerfont{author in head/foot}%
+      \insertshortauthor%
+      \hspace{1.5em}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.55\paperwidth,ht=2.75ex,dp=1ex,left]{title in head/foot}%
+      \usebeamerfont{date in head/foot}%
+      \hspace{1em}
+      \insertshorttitle
+    \end{beamercolorbox}%
+    \vskip-18pt%
+    \hspace{.910\paperwidth}%
+    \begin{beamercolorbox}[wd=10.5mm,ht=2ex,dp=1ex,center, rounded = true, center]{frames in head/foot}%
+     \usebeamerfont{title in head/foot}%
+      \insertframenumber{} / %
+      \inserttotalframenumber%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+\defbeamertemplate*{section navigation}{fractalsoft theme}{}
+
+\defbeamertemplate*{title page}{fractalsoft theme}
+{
+  \begin{beamercolorbox}[ht=2cm,rounded=true,shadow=true,center]{block title color}%
+    \includegraphics[width=2cm]{images/fractalsoft-logotype.png}%
+    \vbox to 2cm{%
+      \vfill%
+      \usebeamerfont*{title}%
+      \inserttitle%
+      \newline%
+      \usebeamerfont*{subtitle}%
+      \insertsubtitle%
+      \vfill%
+    }
+  \end{beamercolorbox}%
+  \vskip10pt%
+  \begin{center}%
+    \insertauthor%
+    \par\par%
+    \insertdate%
+  \end{center}%
+}
+
+\userightsidebartemplate{0cm}{}
+
+
+%% Color theme %%
+\definecolor{gris1}{HTML}{C8C8C8}
+\definecolor{gris2}{HTML}{B3B2B2}
+\definecolor{fractalsoft-red}{HTML}{970102}
+\definecolor{fractalsoft-grey}{HTML}{DCDCDC}
+\definecolor{fractalsoft-graphite}{HTML}{3D3D4D}
+\definecolor{fractalsoft-yellow}{HTML}{CDCFD0}
+\definecolor{fractalsoft-black}{HTML}{cccccc}
+\definecolor{fractalsoft-grey footer}{HTML}{EDECEC}
+
+\setbeamercolor{normal text}{fg=black,bg=fractalsoft-grey}
+\setbeamercolor{structure}{fg=fractalsoft-red}
+
+\setbeamercolor{alerted text}{fg=red!85!black}
+
+\setbeamercolor*{block title color}{fg=black, bg=fractalsoft-black}
+
+\setbeamercolor{item projected}{use=item,fg=white,bg=fractalsoft-red}
+
+\setbeamercolor*{block background}{fg=black, bg=white}
+
+\setbeamercolor*{palette primary}{fg=fractalsoft-grey,bg=fractalsoft-yellow}
+\setbeamercolor*{palette secondary}{fg=black,bg=fractalsoft-red} % box color
+\setbeamercolor*{palette tertiary}{black!100!red}
+\setbeamercolor*{palette quaternary}{black!1!red}
+
+\setbeamercolor*{sidebar}{parent=palette primary}
+
+\setbeamercolor*{palette sidebar primary}{fg=fractalsoft-red}
+\setbeamercolor*{palette sidebar secondary}{fg=red}
+\setbeamercolor*{palette sidebar tertiary}{fg=fractalsoft-red}
+\setbeamercolor*{palette sidebar quaternary}{fg=red}
+
+\setbeamercolor{framesubtitle}{bg=fractalsoft-grey}
+
+\setbeamercolor*{subtitle}{fg=fractalsoft-grey}
+
+\setbeamercolor*{block title}{fg=fractalsoft-grey}
+\setbeamercolor*{block title alerted}{parent=alerted text}
+\setbeamercolor*{block title example}{parent=example text}
+\setbeamercolor*{block body}{}
+\setbeamercolor*{block body alerted}{}
+\setbeamercolor*{block body example}{}
+
+\setbeamercolor*{titlelike}{fg=black, bg=fractalsoft-yellow}
+
+\setbeamercolor*{author in head/foot}{fg=white,bg=fractalsoft-graphite}
+\setbeamercolor*{title in head/foot}{fg=white,bg=fractalsoft-red}
+\setbeamercolor*{frames in head/foot}{fg=black,bg=fractalsoft-black}
+
+
+\setbeamercolor*{section in head/foot}{fg=white, bg=fractalsoft-graphite}
+\setbeamercolor*{subsection in head/foot}{fg=white, bg=fractalsoft-red}
+
+\setbeamercolor*{section in toc}{fg=black}
+
+
+%% Font theme %%
+\usefonttheme{professionalfonts}
+
+\setbeamerfont{title}{size = \huge}
+
+\setbeamerfont{frametitle}{size = \Large}
+
+\setbeamerfont{subsection in toc}{size = \tiny}
+\setbeamerfont{section in toc}{size = \small}
+
+\setbeamerfont{title}{size = \Large}
+\setbeamerfont{subtitle}{size = \small}
+
+\setbeamerfont{section in head/foot}{size = \tiny}
+\setbeamerfont{subsection in head/foot}{size = \tiny}
+
+
+%% Inner theme %%
+\setbeamertemplate{blocks}[ball]
+\setbeamertemplate{items}[ball]
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\mode<all>

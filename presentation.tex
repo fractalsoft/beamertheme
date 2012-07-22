@@ -1,0 +1,104 @@
+\documentclass[12pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\mode<presentation>{ \usetheme{fractalsoft} } % use fractalsoft theme
+
+\author{Our names}
+\title{My title}
+\subtitle{My subtile}
+
+\usebackgroundtemplate{
+  % background
+  \includegraphics[width = 130mm, height = 100mm]{images/bg/1.png}
+}
+
+\begin{document}
+
+\section{My Introduction}
+{
+  % header setting
+  \setbeamertemplate{headline}
+  {
+    \insertvrule{\headheight}{fractalsoft-grey footer}
+  }
+  % footer setting
+  \setbeamertemplate{footline}{}
+
+  \begin{frame}
+    \titlepage
+  \end{frame}
+}
+
+
+\section{My Table of Contents}
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+
+\section{My Section 1}
+\subsection{My Subsection 1}
+\begin{frame}
+  \begin{block}{My Block}
+Lorem ipsum dolor sit amet. Nunc quis ante turpis. Vivamus aliquam faucibus ipsum. Nam volutpat imperdiet ante. Nunc eleifend dui eu.
+  \end{block}
+\end{frame}
+
+\subsection{My Subsection 2}
+\begin{frame}
+  \begin{alert}{My Alert}
+Lorem ipsum dolor sit amet. Nunc quis ante turpis. Vivamus aliquam faucibus ipsum. Nam volutpat imperdiet ante. Nunc eleifend dui eu.
+  \end{alert}
+\end{frame}
+
+\subsection{My Subsection 3}
+\begin{frame}
+  \begin{examples}{My Examples}
+Lorem ipsum dolor sit amet. Nunc quis ante turpis. Vivamus aliquam faucibus ipsum. Nam volutpat imperdiet ante. Nunc eleifend dui eu.
+  \end{examples}
+\end{frame}
+
+
+\section{My Section 2}
+\subsection{My Subsection 4}
+\begin{frame}
+  \begin{block}{My Enumerate}
+    \begin{enumerate}
+      \item{Lorem ipsum dolor sit amet.}
+      \item{Nunc quis ante turpis.}
+      \item{Vivamus aliquam faucibus ipsum.}
+      \item{Nam volutpat imperdiet ante.}
+      \item{Nunc eleifend dui eu.}
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\subsection{My Subsection 5}
+\begin{frame}
+  \begin{block}{My Itemize}
+    \begin{itemize}
+      \item{Lorem ipsum dolor sit amet.}
+      \item{Nunc quis ante turpis.}
+      \item{Vivamus aliquam faucibus ipsum.}
+      \item{Nam volutpat imperdiet ante.}
+      \item{Nunc eleifend dui eu.}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\section{My Section 3}
+\subsection{My Subsection 6}
+\begin{frame}
+  \begin{block}{My Image}
+    \begin{figure}
+      \centering
+      \includegraphics{images/fractalsoft-logotype.png}
+      \caption{Fractal Soft}
+    \end{figure}
+  \end{block}
+\end{frame}
+
+
+\end{document}
