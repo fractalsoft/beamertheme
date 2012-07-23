@@ -10,6 +10,7 @@
 \mode<presentation>
 
 \useoutertheme{shadow}
+\useinnertheme[shadow=true]{rounded}
 
 \definecolor{couleurbarrehaut}{HTML}{C0BEBF}
 \definecolor{couleurbarrebas}{RGB}{190,190,190}
@@ -40,7 +41,36 @@
     {\insertblocktitle}
 }
 
-\defbeamertemplate*{block end}{Warsaw}
+\setbeamertemplate{block body alerted}{fractalsoft theme}
+{
+  \setbeamercolor{global structure}{parent=alerted text}
+}
+
+\defbeamertemplate*{block end}{fractalsoft theme}
+{
+  \end{beamerboxesrounded}
+
+}
+
+\defbeamertemplate*{block example begin}{fractalsoft theme}
+{
+  \begin{beamerboxesrounded}[upper=example title color,lower=example background,shadow=true]
+    {\insertblocktitle}
+}
+
+\defbeamertemplate*{block  exaples end}{fractalsoft theme}
+{
+  \end{beamerboxesrounded}
+
+}
+
+\defbeamertemplate*{block alerted begin}{fractalsoft theme}
+{
+  \begin{beamerboxesrounded}[upper=alert title color,lower=alert background,shadow=true]
+    {\insertblocktitle}
+}
+
+\defbeamertemplate*{block alerted end}{fractalsoft theme}
 {
   \end{beamerboxesrounded}
 
@@ -118,22 +148,28 @@
 \definecolor{fractalsoft-red}{HTML}{970102}
 \definecolor{fractalsoft-grey}{HTML}{DCDCDC}
 \definecolor{fractalsoft-graphite}{HTML}{3D3D4D}
-\definecolor{fractalsoft-yellow}{HTML}{CDCFD0}
+\definecolor{fractalsoft-light grey}{HTML}{CDCFD0}
 \definecolor{fractalsoft-black}{HTML}{cccccc}
 \definecolor{fractalsoft-grey footer}{HTML}{EDECEC}
+\definecolor{fractalsoft-green}{HTML}{095003}
 
 \setbeamercolor{normal text}{fg=black,bg=fractalsoft-grey}
 \setbeamercolor{structure}{fg=fractalsoft-red}
 
 \setbeamercolor{alerted text}{fg=red!85!black}
 
-\setbeamercolor*{block title color}{fg=black, bg=fractalsoft-black}
-
 \setbeamercolor{item projected}{use=item,fg=white,bg=fractalsoft-red}
 
-\setbeamercolor*{block background}{fg=black, bg=white}
+\setbeamercolor*{block title color}{fg=black, bg=fractalsoft-black}%%%%%%% DEFAULT %%%%%%%%%%%%%%%%
+\setbeamercolor*{block background}{fg=black, bg=white}%%%%%%%%%%%%%%%%%%%%  BLOCK  %%%%%%%%%%%%%%%%
 
-\setbeamercolor*{palette primary}{fg=fractalsoft-grey,bg=fractalsoft-yellow}
+\setbeamercolor*{example title color}{fg=white, bg=fractalsoft-green}%% EXAMPLE %%%%%%%%%%%%%%%%
+\setbeamercolor*{example background}{fg=black, bg=white}%%%%%%%%%%%%%%%%%%  BLOCK  %%%%%%%%%%%%%%%%
+
+\setbeamercolor*{alert title color}{fg=white, bg=fractalsoft-red}%%%%%%%%%  ALERT  %%%%%%%%%%%%%%%%
+\setbeamercolor*{alert background}{fg=black, bg=white}%%%%%%%%%%%%%%%%%%%%  BLOCK  %%%%%%%%%%%%%%%%
+
+\setbeamercolor*{palette primary}{fg=fractalsoft-grey,bg=fractalsoft-light grey}
 \setbeamercolor*{palette secondary}{fg=black,bg=fractalsoft-red} % box color
 \setbeamercolor*{palette tertiary}{black!100!red}
 \setbeamercolor*{palette quaternary}{black!1!red}
@@ -156,7 +192,7 @@
 \setbeamercolor*{block body alerted}{}
 \setbeamercolor*{block body example}{}
 
-\setbeamercolor*{titlelike}{fg=black, bg=fractalsoft-yellow}
+\setbeamercolor*{titlelike}{fg=black, bg=fractalsoft-light grey}
 
 \setbeamercolor*{author in head/foot}{fg=white,bg=fractalsoft-graphite}
 \setbeamercolor*{title in head/foot}{fg=white,bg=fractalsoft-red}

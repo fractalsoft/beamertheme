@@ -2,7 +2,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{polski}
-\usepackage{listing}
+
+\usepackage{listings}
+\lstset{%                             %%%% SETTINGS OF LISTINGS %%%%%
+  basicstyle=\color{white}\tiny,      % basic font color and style  %
+  language=Ruby,                      % the language of the code    %
+  backgroundcolor=\color{black},      % choose the background color %
+  keywordstyle=\color{red},           % keyword style               %
+  commentstyle=\color{gray},          % comment style               %
+  stringstyle=\color{yellow},         % string literal style        %
+}                                     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \mode<presentation>{ \usetheme{fractalsoft} } % use fractalsoft theme
 
 \author{Our names}
@@ -49,16 +59,19 @@ Lorem ipsum dolor sit amet. Nunc quis ante turpis. Vivamus aliquam faucibus ipsu
 
 \subsection{My Subsection 2}
 \begin{frame}
-  \begin{alert}{My Alert}
-Lorem ipsum dolor sit amet. Nunc quis ante turpis. Vivamus aliquam faucibus ipsum. Nam volutpat imperdiet ante. Nunc eleifend dui eu.
-  \end{alert}
+  \begin{alertblock}{My Alert}
+
+    \begin{alert}{Lorem ipsum dolor sit amet.}
+ Nunc quis ante turpis. Vivamus aliquam faucibus ipsum. Nam volutpat imperdiet ante. Nunc eleifend dui eu.
+    \end{alert}
+  \end{alertblock}
 \end{frame}
 
 \subsection{My Subsection 3}
 \begin{frame}
-  \begin{examples}{My Examples}
+  \begin{exampleblock}{My Examples}
 Lorem ipsum dolor sit amet. Nunc quis ante turpis. Vivamus aliquam faucibus ipsum. Nam volutpat imperdiet ante. Nunc eleifend dui eu.
-  \end{examples}
+  \end{exampleblock}
 \end{frame}
 
 
@@ -102,5 +115,11 @@ Lorem ipsum dolor sit amet. Nunc quis ante turpis. Vivamus aliquam faucibus ipsu
   \end{block}
 \end{frame}
 
+\subsection{My Subsection 6}
+\begin{frame}
+  \begin{block}{My Code from File}
+    \lstinputlisting{my_example_program.rb}
+  \end{block}
+\end{frame}
 
 \end{document}
