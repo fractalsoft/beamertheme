@@ -2,8 +2,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{polski}
-
 \usepackage{listings}
+\usepackage{graphicx}
+\usepackage{url}
+\input{pygments}
+
 \lstset{%                             %%%% SETTINGS OF LISTINGS %%%%%
   basicstyle=\color{white}\tiny,      % basic font color and style  %
   language=Ruby,                      % the language of the code    %
@@ -115,10 +118,17 @@ Lorem ipsum dolor sit amet. Nunc quis ante turpis. Vivamus aliquam faucibus ipsu
   \end{block}
 \end{frame}
 
-\subsection{My Subsection 6}
+\subsection{My Subsection 7}
 \begin{frame}
-  \begin{block}{My Code from File}
-    \lstinputlisting{my_example_program.rb}
+  \begin{block}{My Code from File by listings}
+    \lstinputlisting{myprogram.rb}
+  \end{block}
+\end{frame}
+
+\subsection{My Subsection 8}
+\begin{frame}
+  \begin{block}{My Code from File by include}
+    \include{myprogram}
   \end{block}
 \end{frame}
 
